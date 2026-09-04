@@ -109,7 +109,7 @@ export const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="inline-flex items-center gap-2 bg-cream-100/80 border border-beige-300/80 px-3 py-2 sm:px-3.5 sm:py-2 rounded-xl text-[10px] sm:text-xs text-charcoal-800 font-medium max-w-full leading-snug"
+                className="w-fit inline-flex items-center gap-2 bg-cream-100/80 border border-beige-300/80 px-3.5 py-2 rounded-full text-[10px] sm:text-xs text-charcoal-800 font-medium max-w-full leading-snug shadow-sm"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-gold-600 animate-pulse flex-shrink-0"></span>
                 <span>Complimentary 1ml sample with every order • Free shipping above ₹999</span>
