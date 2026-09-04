@@ -201,9 +201,20 @@ export default function FeaturedProducts({
                     </h3>
 
                     {/* Short Description */}
-                    <p className="font-sans text-xs text-[#635E57] line-clamp-2 leading-relaxed mb-4">
+                    <p className="font-sans text-xs text-[#635E57] line-clamp-2 leading-relaxed mb-3">
                       {product.shortDescription}
                     </p>
+
+                    {/* Fragrance Notes Pills */}
+                    {product.notes && product.notes.top && (
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {product.notes.top.slice(0, 3).map((note, idx) => (
+                          <span key={idx} className="text-[10px] font-sans px-2 py-0.5 bg-[#F6F2EC] text-[#635E57] rounded border border-[#EBE5DC]">
+                            {note}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Footer Row: Price & Add to Cart */}

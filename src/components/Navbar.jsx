@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ShoppingBag, Search, Menu, X, Clock, Sparkles, UserCheck } from "lucide-react";
+import { ShoppingBag, Search, Menu, X, Sparkles } from "lucide-react";
 
 export default function Navbar({
   cartCount,
@@ -14,11 +14,7 @@ export default function Navbar({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -35,38 +31,33 @@ export default function Navbar({
     setActiveTab(id);
     setMobileMenuOpen(false);
     
-    // Smooth scroll to top or section if on home page
     if (id === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (id === "shop") {
       const el = document.getElementById("shop-section");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (id === "categories") {
       const el = document.getElementById("categories-section");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   return (
-    <header className={`nav-sticky ${isScrolled ? "nav-scrolled" : "bg-transparent py-2"}`}>
-      {/* Top Banner */}
+    <header className={`nav-sticky ${isScrolled ? "nav-scrolled py-3" : "bg-transparent py-4"}`}>
+      
+      {/* Top Notification Bar */}
       <div className="bg-[#191715] text-[#F7F1E5] text-[11px] py-1.5 px-4 text-center font-sans tracking-widest uppercase flex items-center justify-center gap-2">
         <Sparkles className="w-3 h-3 text-[#B88E4B]" />
-        <span>Free Express Shipping on Orders Over $75 • 100% Pure Alcohol-Free Attars</span>
+        <span>Free Shipping over $75 • 100% Pure Alcohol-Free Attars</span>
         <Sparkles className="w-3 h-3 text-[#B88E4B]" />
       </div>
 
-      <div className="container py-4 flex items-center justify-between">
+      <div className="container py-3 flex items-center justify-between">
+        
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -79,17 +70,17 @@ export default function Navbar({
         {/* Brand Logo */}
         <div
           onClick={() => handleNavClick("home")}
-          className="cursor-pointer group flex items-center gap-2 select-none"
+          className="cursor-pointer group flex items-center gap-2.5 select-none"
         >
-          <div className="w-7 h-7 rounded-full bg-[#191715] text-[#B88E4B] flex items-center justify-center font-serif text-sm font-bold group-hover:bg-[#B88E4B] group-hover:text-white transition-all">
+          <div className="w-8 h-8 rounded-full bg-[#191715] text-[#B88E4B] flex items-center justify-center font-serif text-base font-bold group-hover:bg-[#B88E4B] group-hover:text-white transition-all">
             J
           </div>
           <div className="flex flex-col">
-            <span className="font-serif text-2xl font-normal tracking-[0.15em] text-[#191715] group-hover:text-[#B88E4B] transition-colors">
+            <span className="font-serif text-2xl font-normal tracking-[0.12em] text-[#191715] group-hover:text-[#B88E4B] transition-colors">
               JABAZI STORE
             </span>
             <span className="text-[9px] uppercase tracking-[0.25em] text-[#999187] font-sans -mt-1">
-              Pure Attar Essence
+              Perfume Oils & Attars
             </span>
           </div>
         </div>
@@ -102,9 +93,9 @@ export default function Navbar({
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative font-sans text-xs uppercase tracking-[0.15em] transition-colors py-1 ${
+                className={`relative font-sans text-xs uppercase tracking-[0.12em] transition-colors py-1.5 ${
                   isActive
-                    ? "text-[#191715] font-semibold"
+                    ? "text-[#191715] font-bold"
                     : "text-[#635E57] hover:text-[#B88E4B]"
                 }`}
               >
@@ -115,15 +106,15 @@ export default function Navbar({
                   </span>
                 )}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#B88E4B] animate-fade-in" />
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#B88E4B]" />
                 )}
               </button>
             );
           })}
         </nav>
 
-        {/* Right Actions (Search & Cart) */}
-        <div className="flex items-center gap-4">
+        {/* Right Actions: Search & Cart */}
+        <div className="flex items-center gap-3 sm:gap-4">
           <button
             onClick={onOpenSearch}
             className="p-2 text-[#635E57] hover:text-[#B88E4B] transition-colors"
@@ -135,7 +126,7 @@ export default function Navbar({
 
           <button
             onClick={onOpenCart}
-            className="relative flex items-center gap-2 bg-[#191715] hover:bg-[#B88E4B] text-white px-3.5 py-2 rounded-sm transition-all"
+            className="relative flex items-center gap-2 bg-[#191715] hover:bg-[#B88E4B] text-white px-3.5 py-2 rounded-sm transition-all shadow-sm"
             aria-label="View Cart"
           >
             <ShoppingBag className="w-4 h-4 text-[#F7F1E5]" />
@@ -147,19 +138,20 @@ export default function Navbar({
             </span>
           </button>
         </div>
+
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[105px] bg-[#FDFBF7] border-b border-[#EBE5DC] shadow-lg animate-slide-up z-40 py-6 px-6">
-          <div className="flex flex-col gap-4">
+        <div className="md:hidden bg-[#FDFBF7] border-b border-[#EBE5DC] shadow-lg animate-slide-up py-4 px-6">
+          <div className="flex flex-col gap-3">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`text-left font-sans text-sm uppercase tracking-widest py-2 border-b border-[#F2EDE6] flex items-center justify-between ${
                   activeTab === item.id
-                    ? "text-[#B88E4B] font-semibold"
+                    ? "text-[#B88E4B] font-bold"
                     : "text-[#191715]"
                 }`}
               >
@@ -171,14 +163,10 @@ export default function Navbar({
                 )}
               </button>
             ))}
-
-            <div className="pt-2 flex items-center justify-between text-xs text-[#999187]">
-              <span>Need help? Contact support</span>
-              <span className="text-[#B88E4B] font-medium">+1 (800) JABAZI</span>
-            </div>
           </div>
         </div>
       )}
+
     </header>
   );
 }
