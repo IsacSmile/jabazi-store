@@ -139,84 +139,117 @@ export const Home: React.FC = () => {
 
             </div>
 
-            {/* RIGHT SIDE: 2.5s Auto-Cycling Traditional Attar Image Composition */}
+            {/* RIGHT SIDE: Elegant 3-Image Overlapping Cascade Composition */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="relative max-w-md lg:max-w-none mx-auto w-full"
+              className="relative max-w-md lg:max-w-none mx-auto w-full pt-4 sm:pt-6 pb-6 sm:pb-8 px-2 sm:px-4"
             >
-              {/* Main Featured Attar Image Container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-beige-300/80 bg-cream-100 group h-[350px] sm:h-[450px] lg:h-[500px]">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={ATTAR_SLIDES[currentSlide].id}
-                    src={ATTAR_SLIDES[currentSlide].image}
-                    alt={ATTAR_SLIDES[currentSlide].title}
-                    initial={{ opacity: 0, scale: 1.04 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.96 }}
-                    transition={{ duration: 0.6, ease: 'easeInOut' }}
-                    className="w-full h-full object-cover object-center"
+              <div className="relative w-full h-[360px] sm:h-[460px] lg:h-[500px] flex items-center justify-center">
+                
+                {/* 1. TOP-LEFT OVERLAPPING CARD (Attar Image 2 - Sandalwood) */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20, y: -15 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute top-0 left-0 z-10 w-[52%] sm:w-[50%] h-[200px] sm:h-[260px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-beige-300/90 bg-white group"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=800"
+                    alt="Mysore Sandalwood Attar"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                </AnimatePresence>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-charcoal-950/10 to-transparent pointer-events-none"></div>
-
-                {/* Top Right Vintage Badge */}
-                <div className="absolute top-4 right-4 bg-charcoal-900/90 backdrop-blur-md text-cream-50 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium px-3.5 py-1.5 rounded-full shadow-lg border border-gold-600/40">
-                  {ATTAR_SLIDES[currentSlide].badge}
-                </div>
-
-                {/* Slide Indicators */}
-                <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                  {ATTAR_SLIDES.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentSlide(idx)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        idx === currentSlide ? 'w-5 bg-gold-400' : 'w-1.5 bg-white/40'
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-
-                {/* Bottom Overlay Label */}
-                <div className="absolute bottom-4 left-4 right-4 text-cream-50 flex justify-between items-end backdrop-blur-md bg-charcoal-950/50 p-3.5 sm:p-4 rounded-2xl border border-white/10">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest text-gold-400 font-medium">
-                      Artisan Attar • {currentSlide + 1} of {ATTAR_SLIDES.length}
-                    </p>
-                    <h4 className="font-serif text-base sm:text-xl font-normal text-white">
-                      {ATTAR_SLIDES[currentSlide].title}
-                    </h4>
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 text-cream-50">
+                    <span className="text-[8.5px] uppercase tracking-wider text-gold-400 font-semibold block">01 • Hydro-Distilled</span>
+                    <h5 className="font-serif text-xs sm:text-sm font-normal truncate">Mysore Sandalwood</h5>
                   </div>
-                  <span className="text-xs font-serif italic text-cream-200">
-                    {ATTAR_SLIDES[currentSlide].note}
-                  </span>
-                </div>
+                </motion.div>
+
+                {/* 2. MAIN CENTER HERO CARD (Auto-cycling Attar Image) */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute z-20 w-[78%] sm:w-[76%] h-[290px] sm:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-2xl border border-gold-600/30 bg-cream-100 group"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={ATTAR_SLIDES[currentSlide].id}
+                      src={ATTAR_SLIDES[currentSlide].image}
+                      alt={ATTAR_SLIDES[currentSlide].title}
+                      initial={{ opacity: 0, scale: 1.04 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={{ duration: 0.6, ease: 'easeInOut' }}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </AnimatePresence>
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-charcoal-950/15 to-transparent pointer-events-none"></div>
+
+                  {/* Top Right Vintage Badge */}
+                  <div className="absolute top-3.5 right-3.5 bg-charcoal-900/90 backdrop-blur-md text-cream-50 text-[8.5px] sm:text-[9.5px] uppercase tracking-[0.2em] font-medium px-3 py-1 rounded-full shadow-lg border border-gold-600/40">
+                    {ATTAR_SLIDES[currentSlide].badge}
+                  </div>
+
+                  {/* Slide Indicators */}
+                  <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                    {ATTAR_SLIDES.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          idx === currentSlide ? 'w-4 bg-gold-400' : 'w-1.5 bg-white/40'
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Bottom Overlay Label */}
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5 text-cream-50 flex justify-between items-end backdrop-blur-md bg-charcoal-950/50 p-3 sm:p-3.5 rounded-2xl border border-white/10">
+                    <div>
+                      <p className="text-[9px] uppercase tracking-widest text-gold-400 font-medium">
+                        Artisan Attar • {currentSlide + 1}/{ATTAR_SLIDES.length}
+                      </p>
+                      <h4 className="font-serif text-sm sm:text-lg font-normal text-white">
+                        {ATTAR_SLIDES[currentSlide].title}
+                      </h4>
+                    </div>
+                    <span className="text-[11px] font-serif italic text-cream-200">
+                      {ATTAR_SLIDES[currentSlide].note}
+                    </span>
+                  </div>
+                </motion.div>
+
+                {/* 3. BOTTOM-RIGHT OVERLAPPING CARD (Attar Image 3 - Taif Rose) */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20, y: 20 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute bottom-0 right-0 z-30 w-[55%] sm:w-[52%] h-[180px] sm:h-[230px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-beige-300 bg-white group"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=800"
+                    alt="Taif Rose Botanical Attar"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent"></div>
+                  
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 text-cream-50 flex items-center justify-between">
+                    <div>
+                      <span className="text-[8.5px] uppercase tracking-wider text-gold-400 font-semibold block">03 • Pure Extract</span>
+                      <h5 className="font-serif text-xs sm:text-sm font-normal truncate">Taif Rose Absolute</h5>
+                    </div>
+                    <span className="text-[9px] bg-gold-600/90 text-charcoal-950 font-semibold px-2 py-0.5 rounded-md uppercase tracking-wider">
+                      100% Oil
+                    </span>
+                  </div>
+                </motion.div>
+
               </div>
-
-              {/* Floating Secondary Image Badge (Bottom Left) */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="absolute -bottom-5 -left-3 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md border border-beige-300 rounded-2xl p-2.5 sm:p-3 shadow-xl flex items-center gap-3 max-w-[210px] sm:max-w-[240px]"
-              >
-                <img
-                  src={ATTAR_SLIDES[currentSlide].thumb}
-                  alt="Attar Extract Detail"
-                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover border border-beige-200 flex-shrink-0"
-                />
-                <div className="min-w-0">
-                  <p className="text-[10px] uppercase tracking-wider text-gold-700 font-semibold">100% Pure Oil Extract</p>
-                  <p className="text-[11px] font-medium text-charcoal-900 truncate">Zero Alcohol Formula</p>
-                  <p className="text-[9px] text-charcoal-500 font-light truncate">Blooms with body warmth</p>
-                </div>
-              </motion.div>
-
             </motion.div>
 
           </div>
