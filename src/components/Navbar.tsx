@@ -269,6 +269,17 @@ export const Navbar: React.FC = () => {
                     100% Concentrated Attar Oils • Free Shipping Above ₹999
                   </p>
                 </div>
+                <p className="text-[10px] text-charcoal-500 font-light text-center pt-1">
+                  Engineered by{' '}
+                  <a
+                    href="https://www.instagram.com/faiz_imam__/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gold-700 hover:text-gold-800 font-medium underline underline-offset-2 decoration-gold-600/40 transition-colors"
+                  >
+                    Faiz.I
+                  </a>
+                </p>
               </div>
             </motion.div>
           </motion.div>

@@ -98,6 +98,20 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-charcoal-400 font-light gap-4">
           <p>© {new Date().getFullYear()} Shahbazi Store. All rights reserved. Quiet luxury attars.</p>
+
+          {/* Developer Attribution */}
+          <p className="text-[11px] text-charcoal-400 font-light">
+            Engineered by{' '}
+            <a
+              href="https://www.instagram.com/faiz_imam__/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-500 hover:text-gold-400 font-medium underline underline-offset-4 decoration-gold-600/40 hover:decoration-gold-400 transition-colors"
+            >
+              Faiz.I
+            </a>
+          </p>
+
           <div className="flex space-x-6 text-[11px]">
             <span className="hover:text-cream-50 cursor-pointer">Privacy Protocol</span>
             <span className="hover:text-cream-50 cursor-pointer">Terms of Service</span>
