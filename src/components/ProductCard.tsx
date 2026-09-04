@@ -41,7 +41,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     >
       <div>
         {/* Product Image & Badges */}
-        <div className="relative aspect-[4/5] rounded-lg sm:rounded-xl overflow-hidden bg-beige-100 mb-2.5 sm:mb-4 cursor-pointer">
+        <div className="relative aspect-[4/3.4] rounded-lg sm:rounded-xl overflow-hidden bg-beige-100 mb-2 sm:mb-3 cursor-pointer">
           <Link to={`/product/${product.id}`}>
             <img
               src={product.images[0]}

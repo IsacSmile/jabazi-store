@@ -352,8 +352,8 @@ export const Home: React.FC = () => {
           </Link>
         </div>
 
-        {/* 10 Product Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
+        {/* 10 Product Cards Grid - 4 in a row on desktop, 2 in a row on mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {loading
             ? Array(10)
                 .fill(0)
