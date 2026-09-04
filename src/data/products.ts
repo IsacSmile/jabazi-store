@@ -44,7 +44,7 @@ export const PRODUCTS: Product[] = [
     name: 'Royal Oud Sublime',
     subtitle: 'Aged Assam Oud & Warm Amber',
     category: 'Woody',
-    price: 85,
+    price: 2490,
     rating: 4.9,
     reviewsCount: 42,
     isFeatured: true,
@@ -63,9 +63,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 85 },
-      { name: '6ml', price: 155, badge: 'Popular' },
-      { name: '12ml (Tola)', price: 280, badge: 'Best Value' }
+      { name: '3ml', price: 2490 },
+      { name: '6ml', price: 4490, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 7990, badge: 'Best Value' }
     ]
   },
   {
@@ -73,7 +73,7 @@ export const PRODUCTS: Product[] = [
     name: 'Taif Rose Absolute',
     subtitle: 'Cold-Pressed Arabian Damask Rose',
     category: 'Floral',
-    price: 95,
+    price: 2990,
     rating: 5.0,
     reviewsCount: 38,
     isFeatured: true,
@@ -92,9 +92,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 95 },
-      { name: '6ml', price: 175, badge: 'Popular' },
-      { name: '12ml (Tola)', price: 320 }
+      { name: '3ml', price: 2990 },
+      { name: '6ml', price: 5290, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 9490 }
     ]
   },
   {
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
     name: 'Sandal Amber Radiance',
     subtitle: 'Mysore Sandalwood & Fossil Amber',
     category: 'Woody',
-    price: 75,
+    price: 1990,
     rating: 4.8,
     reviewsCount: 56,
     isFeatured: true,
@@ -121,9 +121,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 75 },
-      { name: '6ml', price: 135, badge: 'Popular' },
-      { name: '12ml (Tola)', price: 240 }
+      { name: '3ml', price: 1990 },
+      { name: '6ml', price: 3490, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 6290 }
     ]
   },
   {
@@ -131,7 +131,7 @@ export const PRODUCTS: Product[] = [
     name: 'Musk Kashmir Supreme',
     subtitle: 'Velvety White Musk & Silk Iris',
     category: 'Musk',
-    price: 70,
+    price: 1890,
     rating: 4.9,
     reviewsCount: 64,
     isFeatured: true,
@@ -150,9 +150,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 70 },
-      { name: '6ml', price: 125, badge: 'Popular' },
-      { name: '12ml (Tola)', price: 220 }
+      { name: '3ml', price: 1890 },
+      { name: '6ml', price: 3290, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 5890 }
     ]
   },
   {
@@ -160,7 +160,7 @@ export const PRODUCTS: Product[] = [
     name: 'Saffron Gold Oriental',
     subtitle: 'Kashmiri Mogra Saffron & Labdanum',
     category: 'Oriental',
-    price: 90,
+    price: 2790,
     rating: 4.7,
     reviewsCount: 29,
     isFeatured: false,
@@ -179,9 +179,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 90 },
-      { name: '6ml', price: 165 },
-      { name: '12ml (Tola)', price: 300, badge: 'Collector Choice' }
+      { name: '3ml', price: 2790 },
+      { name: '6ml', price: 4990 },
+      { name: '12ml (Tola)', price: 8890, badge: 'Collector Choice' }
     ]
   },
   {
@@ -189,7 +189,7 @@ export const PRODUCTS: Product[] = [
     name: 'Bergamot Solace',
     subtitle: 'Calabrian Citrus & Green Vetiver',
     category: 'Fresh',
-    price: 65,
+    price: 1690,
     rating: 4.8,
     reviewsCount: 31,
     isFeatured: false,
@@ -208,9 +208,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 65 },
-      { name: '6ml', price: 115, badge: 'Popular' },
-      { name: '12ml (Tola)', price: 195 }
+      { name: '3ml', price: 1690 },
+      { name: '6ml', price: 2990, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 5290 }
     ]
   },
   {
@@ -218,7 +218,7 @@ export const PRODUCTS: Product[] = [
     name: 'Jasmine Sambac Nectar',
     subtitle: 'Night-Blooming Arabian Jasmine',
     category: 'Floral',
-    price: 80,
+    price: 2290,
     rating: 4.9,
     reviewsCount: 47,
     isFeatured: true,
@@ -237,9 +237,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 80 },
-      { name: '6ml', price: 145 },
-      { name: '12ml (Tola)', price: 260 }
+      { name: '3ml', price: 2290 },
+      { name: '6ml', price: 3990 },
+      { name: '12ml (Tola)', price: 7190 }
     ]
   },
   {
@@ -247,7 +247,7 @@ export const PRODUCTS: Product[] = [
     name: 'Vetiver Imperiale',
     subtitle: 'Khus Roots & Clay Mitti Attar',
     category: 'Fresh',
-    price: 72,
+    price: 1990,
     rating: 4.9,
     reviewsCount: 52,
     isFeatured: false,
@@ -266,9 +266,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 72 },
-      { name: '6ml', price: 130, badge: 'Popular' },
-      { name: '12ml (Tola)', price: 230 }
+      { name: '3ml', price: 1990 },
+      { name: '6ml', price: 3490, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 6190 }
     ]
   },
   {
@@ -276,7 +276,7 @@ export const PRODUCTS: Product[] = [
     name: 'Amber Blackwood',
     subtitle: 'Smoky Birch, Amber & Frankincense',
     category: 'Oriental',
-    price: 88,
+    price: 2690,
     rating: 4.8,
     reviewsCount: 23,
     isFeatured: false,
@@ -295,9 +295,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 88 },
-      { name: '6ml', price: 160 },
-      { name: '12ml (Tola)', price: 290 }
+      { name: '3ml', price: 2690 },
+      { name: '6ml', price: 4790 },
+      { name: '12ml (Tola)', price: 8490 }
     ]
   },
   {
@@ -305,7 +305,7 @@ export const PRODUCTS: Product[] = [
     name: 'White Gazelle Musk',
     subtitle: 'Soft Cashmere & Botanical Musk',
     category: 'Musk',
-    price: 78,
+    price: 2190,
     rating: 4.9,
     reviewsCount: 41,
     isFeatured: false,
@@ -324,9 +324,9 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&q=80&w=800'
     ],
     sizes: [
-      { name: '3ml', price: 78 },
-      { name: '6ml', price: 140, badge: 'Popular' },
-      { name: '12ml (Tola)', price: 250 }
+      { name: '3ml', price: 2190 },
+      { name: '6ml', price: 3790, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 6790 }
     ]
   }
 ];
@@ -385,7 +385,7 @@ export const INITIAL_ORDERS = [
         name: 'Royal Oud Sublime',
         size: '6ml',
         quantity: 1,
-        price: 155,
+        price: 4490,
         image: 'https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800'
       },
       {
@@ -393,20 +393,20 @@ export const INITIAL_ORDERS = [
         name: 'Musk Kashmir Supreme',
         size: '3ml',
         quantity: 1,
-        price: 70,
+        price: 1890,
         image: 'https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&q=80&w=800'
       }
     ],
-    subtotal: 225,
+    subtotal: 6380,
     shipping: 0,
     tax: 0,
-    total: 225,
+    total: 6380,
     shippingAddress: {
       name: 'Faiz Ahmed',
       address: '42 Sanctuary Avenue, Suite 4B',
-      city: 'Dubai',
-      zip: '00000',
-      country: 'United Arab Emirates'
+      city: 'Mumbai',
+      zip: '400001',
+      country: 'India'
     }
   },
   {
@@ -419,20 +419,20 @@ export const INITIAL_ORDERS = [
         name: 'Sandal Amber Radiance',
         size: '12ml (Tola)',
         quantity: 1,
-        price: 240,
+        price: 6290,
         image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=800'
       }
     ],
-    subtotal: 240,
+    subtotal: 6290,
     shipping: 0,
     tax: 0,
-    total: 240,
+    total: 6290,
     shippingAddress: {
       name: 'Faiz Ahmed',
       address: '42 Sanctuary Avenue, Suite 4B',
-      city: 'Dubai',
-      zip: '00000',
-      country: 'United Arab Emirates'
+      city: 'Mumbai',
+      zip: '400001',
+      country: 'India'
     }
   }
 ];

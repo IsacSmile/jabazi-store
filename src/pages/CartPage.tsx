@@ -12,7 +12,7 @@ export const CartPage: React.FC = () => {
   const [promoApplied, setPromoApplied] = useState(false);
   const [promoError, setPromoError] = useState('');
 
-  const FREE_SHIPPING_THRESHOLD = 200;
+  const FREE_SHIPPING_THRESHOLD = 5000;
   const progressPercent = Math.min((cartTotal / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const remainingForFreeShipping = Math.max(FREE_SHIPPING_THRESHOLD - cartTotal, 0);
 
@@ -80,7 +80,7 @@ export const CartPage: React.FC = () => {
               <div className="flex justify-between items-center text-charcoal-800 text-[11px] sm:text-xs">
                 <span className="font-medium">
                   {remainingForFreeShipping > 0
-                    ? `Add $${remainingForFreeShipping.toFixed(0)} more for Express Shipping`
+                    ? `Add ₹${remainingForFreeShipping.toLocaleString('en-IN')} more for Express Shipping`
                     : '🎉 Qualified for Express Shipping!'}
                 </span>
                 <span className="text-gold-700 font-semibold">{progressPercent.toFixed(0)}%</span>
@@ -115,7 +115,7 @@ export const CartPage: React.FC = () => {
                         {item.product.name}
                       </Link>
                       <div className="text-[10px] sm:text-xs text-charcoal-500 font-light truncate">
-                        Size: <strong className="font-medium text-charcoal-800">{item.selectedSize}</strong> • ${item.unitPrice}
+                        Size: <strong className="font-medium text-charcoal-800">{item.selectedSize}</strong> • ₹{item.unitPrice.toLocaleString('en-IN')}
                       </div>
                     </div>
                   </div>
@@ -141,7 +141,7 @@ export const CartPage: React.FC = () => {
                     {/* Total Price & Remove */}
                     <div className="flex items-center space-x-2">
                       <span className="font-serif text-base sm:text-xl font-semibold text-charcoal-900">
-                        ${(item.unitPrice * item.quantity).toFixed(0)}
+                        ₹{(item.unitPrice * item.quantity).toLocaleString('en-IN')}
                       </span>
                       <button
                         onClick={() => removeFromCart(item.product.id, item.selectedSize)}
@@ -203,25 +203,25 @@ export const CartPage: React.FC = () => {
             <div className="space-y-2.5 text-xs text-charcoal-600 border-t border-beige-200 pt-3">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span className="font-medium text-charcoal-900">${cartTotal.toFixed(0)}</span>
+                <span className="font-medium text-charcoal-900">₹{cartTotal.toLocaleString('en-IN')}</span>
               </div>
               {discount > 0 && (
                 <div className="flex justify-between text-green-700 font-medium">
                   <span>Privilege Discount (10%)</span>
-                  <span>-${discount.toFixed(0)}</span>
+                  <span>-₹{discount.toLocaleString('en-IN')}</span>
                 </div>
               )}
               <div className="flex justify-between">
                 <span>Express Shipping</span>
                 <span className="text-gold-700 font-medium">
-                  {remainingForFreeShipping === 0 ? 'Complimentary' : '$15'}
+                  {remainingForFreeShipping === 0 ? 'Complimentary' : '₹250'}
                 </span>
               </div>
             </div>
 
             <div className="border-t border-beige-200 pt-3 flex justify-between items-center text-charcoal-900">
               <span className="uppercase tracking-wider text-[11px] sm:text-xs font-semibold">Total Amount</span>
-              <span className="font-serif text-2xl sm:text-3xl font-semibold">${finalTotal.toFixed(0)}</span>
+              <span className="font-serif text-2xl sm:text-3xl font-semibold">₹{finalTotal.toLocaleString('en-IN')}</span>
             </div>
 
             <button

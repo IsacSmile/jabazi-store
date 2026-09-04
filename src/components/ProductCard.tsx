@@ -140,7 +140,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="flex items-center justify-between pt-0.5">
           <div>
             <span className="font-serif text-sm sm:text-lg font-normal text-charcoal-900">
-              ${matchedSizeObj.price}
+              ₹{matchedSizeObj.price.toLocaleString('en-IN')}
             </span>
           </div>
 

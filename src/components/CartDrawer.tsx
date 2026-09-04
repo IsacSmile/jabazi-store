@@ -59,7 +59,7 @@ export const CartDrawer: React.FC = () => {
               <div className="bg-beige-100/80 px-6 py-3 border-b border-beige-200 text-xs">
                 {remainingForFreeShipping > 0 ? (
                   <p className="text-charcoal-700 font-light mb-1.5">
-                    Add <span className="font-semibold text-charcoal-900">${remainingForFreeShipping.toFixed(0)}</span> more for complimentary express delivery.
+                    Add <span className="font-semibold text-charcoal-900">₹{remainingForFreeShipping.toLocaleString('en-IN')}</span> more for complimentary express delivery.
                   </p>
                 ) : (
                   <p className="text-gold-700 font-medium mb-1.5 flex items-center gap-1.5">
@@ -149,7 +149,7 @@ export const CartDrawer: React.FC = () => {
                           </div>
 
                           <span className="font-serif text-base text-charcoal-900 font-medium">
-                            ${(item.unitPrice * item.quantity).toFixed(0)}
+                            ₹{(item.unitPrice * item.quantity).toLocaleString('en-IN')}
                           </span>
                         </div>
                       </div>
@@ -164,7 +164,7 @@ export const CartDrawer: React.FC = () => {
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between text-charcoal-600">
                       <span>Subtotal</span>
-                      <span className="font-serif text-sm font-medium text-charcoal-900">${cartTotal.toFixed(0)}</span>
+                      <span className="font-serif text-sm font-medium text-charcoal-900">₹{cartTotal.toLocaleString('en-IN')}</span>
                     </div>
                     <div className="flex justify-between text-charcoal-600">
                       <span>Shipping</span>
@@ -176,7 +176,7 @@ export const CartDrawer: React.FC = () => {
 
                   <div className="pt-2 border-t border-beige-200 flex justify-between items-center text-sm font-medium">
                     <span className="uppercase tracking-wider text-charcoal-900 font-semibold">Total</span>
-                    <span className="font-serif text-2xl text-charcoal-900 font-semibold">${cartTotal.toFixed(0)}</span>
+                    <span className="font-serif text-2xl text-charcoal-900 font-semibold">₹{cartTotal.toLocaleString('en-IN')}</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 pt-2">

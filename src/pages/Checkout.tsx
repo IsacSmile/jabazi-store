@@ -10,13 +10,13 @@ export const Checkout: React.FC = () => {
   const [formData, setFormData] = useState<ShippingDetails>({
     name: 'Faiz Ahmed',
     email: 'faiz@example.com',
-    address: '42 Sanctuary Boulevard, Suite 7A',
-    city: 'Dubai',
-    zip: '00000',
-    country: 'United Arab Emirates'
+    address: '42 Sanctuary Boulevard, Bandra West',
+    city: 'Mumbai',
+    zip: '400050',
+    country: 'India'
   });
 
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'applepay' | 'cod'>('card');
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'upi' | 'cod'>('upi');
   const [cardNumber, setCardNumber] = useState('4242 •••• •••• 4242');
   const [cardExpiry, setCardExpiry] = useState('12/28');
   const [cardCvc, setCardCvc] = useState('888');
@@ -92,7 +92,7 @@ export const Checkout: React.FC = () => {
 
           <div className="flex justify-between border-b border-beige-200 pb-2.5">
             <span className="text-charcoal-500 font-light">Total Amount Paid:</span>
-            <span className="font-serif text-base sm:text-lg font-semibold text-charcoal-900">${completedOrder.total}</span>
+            <span className="font-serif text-base sm:text-lg font-semibold text-charcoal-900">₹{completedOrder.total.toLocaleString('en-IN')}</span>
           </div>
 
           <div className="space-y-1.5 pt-1">
@@ -100,7 +100,7 @@ export const Checkout: React.FC = () => {
             {completedOrder.items.map((item: any) => (
               <div key={item.id} className="flex justify-between font-medium text-charcoal-800">
                 <span className="truncate pr-2">{item.name} ({item.size}) × {item.quantity}</span>
-                <span>${item.price * item.quantity}</span>
+                <span>₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
               </div>
             ))}
           </div>
@@ -204,7 +204,7 @@ export const Checkout: React.FC = () => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-charcoal-600 font-medium uppercase tracking-wider text-[10px]">City / Region</label>
+                <label className="text-charcoal-600 font-medium uppercase tracking-wider text-[10px]">City / State</label>
                 <input
                   type="text"
                   name="city"
@@ -233,10 +233,19 @@ export const Checkout: React.FC = () => {
           <div className="bg-white border border-beige-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 space-y-4 sm:space-y-5 shadow-sm">
             <h2 className="font-serif text-lg sm:text-xl text-charcoal-900 font-medium flex items-center gap-2 border-b border-beige-200 pb-3">
               <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gold-600 text-charcoal-950 text-[10px] sm:text-xs font-bold flex items-center justify-center">2</span>
-              <span>Payment Option</span>
+              <span>Payment Method</span>
             </h2>
 
             <div className="grid grid-cols-3 gap-2 sm:gap-3">
+              <button
+                type="button"
+                onClick={() => setPaymentMethod('upi')}
+                className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border text-center text-[10px] sm:text-xs font-medium transition-all ${
+                  paymentMethod === 'upi' ? 'border-gold-600 bg-gold-500/10 text-charcoal-900' : 'border-beige-300 bg-cream-50'
+                }`}
+              >
+                UPI / GPay / PhonePe
+              </button>
               <button
                 type="button"
                 onClick={() => setPaymentMethod('card')}
@@ -244,16 +253,7 @@ export const Checkout: React.FC = () => {
                   paymentMethod === 'card' ? 'border-gold-600 bg-gold-500/10 text-charcoal-900' : 'border-beige-300 bg-cream-50'
                 }`}
               >
-                Credit Card
-              </button>
-              <button
-                type="button"
-                onClick={() => setPaymentMethod('applepay')}
-                className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border text-center text-[10px] sm:text-xs font-medium transition-all ${
-                  paymentMethod === 'applepay' ? 'border-gold-600 bg-gold-500/10 text-charcoal-900' : 'border-beige-300 bg-cream-50'
-                }`}
-              >
-                Apple / Google
+                Debit / Credit Card
               </button>
               <button
                 type="button"
@@ -262,7 +262,7 @@ export const Checkout: React.FC = () => {
                   paymentMethod === 'cod' ? 'border-gold-600 bg-gold-500/10 text-charcoal-900' : 'border-beige-300 bg-cream-50'
                 }`}
               >
-                Cash Delivery
+                Cash on Delivery
               </button>
             </div>
 
@@ -324,7 +324,7 @@ export const Checkout: React.FC = () => {
                       <span className="text-charcoal-500 font-light text-[11px]">{item.selectedSize} × {item.quantity}</span>
                     </div>
                   </div>
-                  <span className="font-serif font-semibold text-charcoal-900 ml-2 flex-shrink-0">${(item.unitPrice * item.quantity).toFixed(0)}</span>
+                  <span className="font-serif font-semibold text-charcoal-900 ml-2 flex-shrink-0">₹{(item.unitPrice * item.quantity).toLocaleString('en-IN')}</span>
                 </div>
               ))}
             </div>
@@ -332,15 +332,15 @@ export const Checkout: React.FC = () => {
             <div className="border-t border-beige-200 pt-3 space-y-1.5 text-xs text-charcoal-600">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>${cartTotal.toFixed(0)}</span>
+                <span>₹{cartTotal.toLocaleString('en-IN')}</span>
               </div>
               <div className="flex justify-between text-gold-700">
-                <span>Express Shipping</span>
+                <span>Express Delivery</span>
                 <span>Complimentary</span>
               </div>
               <div className="flex justify-between pt-2 border-t border-beige-200 text-sm font-bold text-charcoal-900">
                 <span>Total Due</span>
-                <span className="font-serif text-xl sm:text-2xl font-semibold">${cartTotal.toFixed(0)}</span>
+                <span className="font-serif text-xl sm:text-2xl font-semibold">₹{cartTotal.toLocaleString('en-IN')}</span>
               </div>
             </div>
 
@@ -354,7 +354,7 @@ export const Checkout: React.FC = () => {
               ) : (
                 <>
                   <Lock className="w-3.5 h-3.5 text-gold-500" />
-                  <span>Place Order • ${cartTotal.toFixed(0)}</span>
+                  <span>Place Order • ₹{cartTotal.toLocaleString('en-IN')}</span>
                 </>
               )}
             </button>

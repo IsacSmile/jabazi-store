@@ -99,7 +99,7 @@ export const OrderHistory: React.FC = () => {
                   </span>
 
                   <span className="font-serif text-lg sm:text-xl font-bold text-charcoal-900">
-                    ${order.total}
+                    ₹{order.total.toLocaleString('en-IN')}
                   </span>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export const OrderHistory: React.FC = () => {
                           Size: <strong className="font-medium text-charcoal-800">{item.size}</strong> • Qty: {item.quantity}
                         </div>
                         <div className="text-[11px] sm:text-xs font-semibold text-charcoal-800">
-                          ${item.price} per unit
+                          ₹{item.price.toLocaleString('en-IN')} per unit
                         </div>
                       </div>
                     </div>
