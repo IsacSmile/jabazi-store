@@ -59,6 +59,7 @@ export const Home: React.FC = () => {
   }, []);
 
   const featuredProducts = PRODUCTS.filter((p) => p.isFeatured).slice(0, 4);
+  const trendingProducts = PRODUCTS.slice(0, 10);
 
   return (
     <div className="space-y-12 sm:space-y-20 md:space-y-28 pb-12">
@@ -328,6 +329,36 @@ export const Home: React.FC = () => {
                 .fill(0)
                 .map((_, i) => <ProductCardSkeleton key={i} />)
             : featuredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+        </div>
+      </section>
+
+      {/* TRENDING ATTARS SECTION - 10 Product Cards */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-10">
+        <div className="flex flex-row justify-between items-end border-b border-beige-200 pb-4 sm:pb-6">
+          <div>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold-700 font-medium">Most Coveted Fragrances</span>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal-900 font-light mt-0.5">
+              Trending Attars
+            </h2>
+          </div>
+          <Link
+            to="/shop"
+            className="text-[11px] sm:text-xs uppercase tracking-widest font-medium text-charcoal-800 hover:text-gold-700 flex items-center gap-1.5 transition-colors"
+          >
+            <span>Explore All ({PRODUCTS.length})</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {/* 10 Product Cards Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
+          {loading
+            ? Array(10)
+                .fill(0)
+                .map((_, i) => <ProductCardSkeleton key={i} />)
+            : trendingProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
         </div>

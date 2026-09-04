@@ -328,6 +328,64 @@ export const PRODUCTS: Product[] = [
       { name: '6ml', price: 3790, badge: 'Popular' },
       { name: '12ml (Tola)', price: 6790 }
     ]
+  },
+  {
+    id: 'black-amber-majestic',
+    name: 'Black Amber Majestic',
+    subtitle: 'Omani Frankincense & Black Amber',
+    category: 'Oriental',
+    price: 2890,
+    rating: 4.9,
+    reviewsCount: 35,
+    isFeatured: true,
+    isBestSeller: false,
+    description: 'Deep Omani frankincense tears blended with dark fossilized black amber and smoked agarwood bark for an authoritative royal presence.',
+    notes: {
+      top: ['Omani Frankincense', 'Toasted Cardamom'],
+      heart: ['Dark Labdanum', 'Black Amber'],
+      base: ['Smoky Agarwood', 'Warm Benzoin']
+    },
+    intensity: 'Rich',
+    longevity: '14 - 18 hours',
+    origin: 'Salalah, Oman',
+    images: [
+      'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800'
+    ],
+    sizes: [
+      { name: '3ml', price: 2890 },
+      { name: '6ml', price: 4990, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 8990 }
+    ]
+  },
+  {
+    id: 'rose-de-mai-sanctuary',
+    name: 'Rose De Mai Sanctuary',
+    subtitle: 'Grasse May Rose & White Oud',
+    category: 'Floral',
+    price: 3190,
+    rating: 5.0,
+    reviewsCount: 28,
+    isFeatured: true,
+    isBestSeller: false,
+    description: 'Hand-picked May Rose petals from Grasse distilled over pure white agarwood resin. Exquisitely romantic, smooth, and opulent.',
+    notes: {
+      top: ['Grasse May Rose Petals', 'Dewy Green Stems'],
+      heart: ['White Agarwood', 'Orris Butter'],
+      base: ['Creamy Sandalwood', 'White Amber']
+    },
+    intensity: 'Moderate',
+    longevity: '12 - 16 hours',
+    origin: 'Grasse / Assam',
+    images: [
+      'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=800'
+    ],
+    sizes: [
+      { name: '3ml', price: 3190 },
+      { name: '6ml', price: 5490, badge: 'Popular' },
+      { name: '12ml (Tola)', price: 9890 }
+    ]
   }
 ];
 
