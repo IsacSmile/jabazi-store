@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, ShieldCheck, Feather, Compass, Droplet } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Feather, Droplet } from 'lucide-react';
 import { PRODUCTS, CATEGORIES } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 import { ProductCardSkeleton } from '../components/SkeletonLoader';
@@ -274,17 +274,6 @@ export const Home: React.FC = () => {
 
       {/* VERIFIED PATRON TESTIMONIALS */}
       <TestimonialSection />
-
-      {/* BRAND BANNER QUOTE */}
-      <section className="max-w-4xl mx-auto px-4 text-center space-y-4 sm:space-y-6 py-4">
-        <Compass className="w-6 h-6 sm:w-8 sm:h-8 text-gold-600 mx-auto stroke-1" />
-        <blockquote className="font-serif text-lg sm:text-2xl md:text-3xl text-charcoal-900 italic leading-relaxed font-light px-2">
-          "Attar is not merely a fragrance; it is a quiet memory suspended in oil. It lives with you, warm and subtle, throughout the day."
-        </blockquote>
-        <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-charcoal-500 font-medium">
-          Master Distiller • Jabazi Atelier
-        </p>
-      </section>
 
     </div>
   );
