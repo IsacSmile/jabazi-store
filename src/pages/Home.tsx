@@ -4,6 +4,7 @@ import { Sparkles, ArrowRight, ShieldCheck, Feather, Compass, Droplet } from 'lu
 import { PRODUCTS, CATEGORIES } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 import { ProductCardSkeleton } from '../components/SkeletonLoader';
+import { TestimonialSection } from '../components/TestimonialSection';
 import { motion } from 'framer-motion';
 
 export const Home: React.FC = () => {
@@ -270,6 +271,9 @@ export const Home: React.FC = () => {
 
         </div>
       </section>
+
+      {/* VERIFIED PATRON TESTIMONIALS */}
+      <TestimonialSection />
 
       {/* BRAND BANNER QUOTE */}
       <section className="max-w-4xl mx-auto px-4 text-center space-y-4 sm:space-y-6 py-4">
