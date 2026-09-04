@@ -91,38 +91,106 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* EDITORIAL CRAFT HIGHLIGHT */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-cream-50 border border-beige-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-14 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-center shadow-sm">
-          <div className="space-y-2.5 p-2">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-beige-100 flex items-center justify-center mx-auto text-gold-700">
-              <Droplet className="w-5 h-5 sm:w-6 sm:h-6 stroke-1" />
-            </div>
-            <h3 className="font-serif text-lg sm:text-xl text-charcoal-900 font-medium">100% Pure Oil Extract</h3>
-            <p className="text-xs text-charcoal-600 font-light leading-relaxed">
-              Zero alcohol, zero synthetic fillers. Concentrated perfume oil that blooms naturally with your body warmth.
-            </p>
-          </div>
+      {/* EDITORIAL CRAFT HIGHLIGHT - Quiet Luxury Redesign */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
+        <div className="text-center max-w-xl mx-auto space-y-2">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-gold-700 font-semibold">
+            Distillation Heritage
+          </span>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal-900 font-light">
+            The Anatomy of Pure Attar
+          </h2>
+        </div>
 
-          <div className="space-y-2.5 p-2 border-y md:border-y-0 md:border-x border-beige-200 py-4 md:py-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-beige-100 flex items-center justify-center mx-auto text-gold-700">
-              <Feather className="w-5 h-5 sm:w-6 sm:h-6 stroke-1" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          
+          {/* Card 1 */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="group relative bg-cream-50/90 border border-beige-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-4 hover:border-gold-600/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+          >
+            <div className="flex justify-between items-start">
+              <div className="w-10 h-10 rounded-full bg-gold-600/10 flex items-center justify-center text-gold-700 group-hover:bg-gold-600 group-hover:text-charcoal-950 transition-colors duration-300">
+                <Droplet className="w-5 h-5 stroke-[1.5]" />
+              </div>
+              <span className="font-serif text-2xl text-beige-400 group-hover:text-gold-600/60 font-light transition-colors">
+                01
+              </span>
             </div>
-            <h3 className="font-serif text-lg sm:text-xl text-charcoal-900 font-medium">Intimate Projection</h3>
-            <p className="text-xs text-charcoal-600 font-light leading-relaxed">
-              Designed for close contact and skin longevity. A signature aura that leaves a memorable, elegant trail.
-            </p>
-          </div>
 
-          <div className="space-y-2.5 p-2">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-beige-100 flex items-center justify-center mx-auto text-gold-700">
-              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 stroke-1" />
+            <div className="space-y-2">
+              <h3 className="font-serif text-xl text-charcoal-900 font-normal">
+                100% Pure Oil Extract
+              </h3>
+              <p className="text-xs text-charcoal-500 font-light leading-relaxed">
+                Zero alcohol, zero synthetic fillers. Concentrated perfume oil that blooms naturally with your body warmth.
+              </p>
             </div>
-            <h3 className="font-serif text-lg sm:text-xl text-charcoal-900 font-medium">Artisanal Packaging</h3>
-            <p className="text-xs text-charcoal-600 font-light leading-relaxed">
-              Presented in velvet-lined hand-carved wood boxes with crystal glass dipsticks for traditional application.
-            </p>
-          </div>
+
+            <div className="pt-2 border-t border-beige-200/60 flex items-center text-[10px] uppercase tracking-widest text-gold-700 font-medium">
+              <span>Pure Distillation</span>
+            </div>
+          </motion.div>
+
+          {/* Card 2 */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="group relative bg-cream-50/90 border border-beige-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-4 hover:border-gold-600/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+          >
+            <div className="flex justify-between items-start">
+              <div className="w-10 h-10 rounded-full bg-gold-600/10 flex items-center justify-center text-gold-700 group-hover:bg-gold-600 group-hover:text-charcoal-950 transition-colors duration-300">
+                <Feather className="w-5 h-5 stroke-[1.5]" />
+              </div>
+              <span className="font-serif text-2xl text-beige-400 group-hover:text-gold-600/60 font-light transition-colors">
+                02
+              </span>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-serif text-xl text-charcoal-900 font-normal">
+                Intimate Projection
+              </h3>
+              <p className="text-xs text-charcoal-500 font-light leading-relaxed">
+                Designed for close contact and skin longevity. A signature aura that leaves a memorable, elegant trail.
+              </p>
+            </div>
+
+            <div className="pt-2 border-t border-beige-200/60 flex items-center text-[10px] uppercase tracking-widest text-gold-700 font-medium">
+              <span>Personal Scent Aura</span>
+            </div>
+          </motion.div>
+
+          {/* Card 3 */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="group relative bg-cream-50/90 border border-beige-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-4 hover:border-gold-600/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+          >
+            <div className="flex justify-between items-start">
+              <div className="w-10 h-10 rounded-full bg-gold-600/10 flex items-center justify-center text-gold-700 group-hover:bg-gold-600 group-hover:text-charcoal-950 transition-colors duration-300">
+                <ShieldCheck className="w-5 h-5 stroke-[1.5]" />
+              </div>
+              <span className="font-serif text-2xl text-beige-400 group-hover:text-gold-600/60 font-light transition-colors">
+                03
+              </span>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-serif text-xl text-charcoal-900 font-normal">
+                Artisanal Packaging
+              </h3>
+              <p className="text-xs text-charcoal-500 font-light leading-relaxed">
+                Presented in velvet-lined hand-carved wood boxes with crystal glass dipsticks for traditional application.
+              </p>
+            </div>
+
+            <div className="pt-2 border-t border-beige-200/60 flex items-center text-[10px] uppercase tracking-widest text-gold-700 font-medium">
+              <span>Hand-Carved Sanctuary</span>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
