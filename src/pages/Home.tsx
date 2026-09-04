@@ -76,10 +76,10 @@ export const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-50 border border-gold-600/30 text-[9px] sm:text-[10px] text-gold-700 uppercase tracking-[0.25em] font-semibold w-max shadow-sm"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-cream-50 border border-gold-600/30 text-[8.5px] sm:text-[10px] text-gold-700 uppercase tracking-[0.18em] sm:tracking-[0.25em] font-semibold max-w-full shadow-sm"
               >
-                <Sparkles className="w-3 h-3 text-gold-600 stroke-[1.5]" />
-                <span>ARTISAN BOTANICAL PERFUME OILS</span>
+                <Sparkles className="w-3 h-3 text-gold-600 stroke-[1.5] flex-shrink-0" />
+                <span className="truncate">ARTISAN BOTANICAL PERFUME OILS</span>
               </motion.div>
 
               {/* Large Premium Headline */}
@@ -103,15 +103,15 @@ export const Home: React.FC = () => {
                 Pure, alcohol-free concentrated attars hand-distilled in traditional copper stills. Formulated with rare aged Assam agarwood, fresh Taif roses, and Mysore sandalwood designed for intimate skin longevity.
               </motion.p>
 
-              {/* Soft Offer Line */}
+              {/* Soft Offer Line - Responsive & Wrapping for Mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="inline-flex items-center gap-2 bg-cream-100/80 border border-beige-300/80 px-3.5 py-2 rounded-xl text-[10px] sm:text-xs text-charcoal-800 font-medium w-max"
+                className="inline-flex items-center gap-2 bg-cream-100/80 border border-beige-300/80 px-3 py-2 sm:px-3.5 sm:py-2 rounded-xl text-[10px] sm:text-xs text-charcoal-800 font-medium max-w-full leading-snug"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-gold-600 animate-pulse"></span>
-                <span>Complimentary 1ml artisan sample with every order • Free shipping above ₹999</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-600 animate-pulse flex-shrink-0"></span>
+                <span>Complimentary 1ml sample with every order • Free shipping above ₹999</span>
               </motion.div>
 
               {/* Two CTA Buttons */}
@@ -119,11 +119,11 @@ export const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
+                className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4"
               >
                 <Link
                   to="/shop"
-                  className="bg-charcoal-900 hover:bg-gold-700 text-cream-50 px-7 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2.5 group text-center"
+                  className="bg-charcoal-900 hover:bg-gold-700 text-cream-50 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 group text-center"
                 >
                   <span>Explore Collection</span>
                   <ArrowRight className="w-3.5 h-3.5 text-gold-500 group-hover:translate-x-1 transition-transform" />
@@ -131,7 +131,7 @@ export const Home: React.FC = () => {
 
                 <Link
                   to="/categories"
-                  className="border border-beige-300 text-charcoal-800 hover:bg-cream-100 hover:border-charcoal-400 px-7 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 text-center"
+                  className="border border-beige-300 text-charcoal-800 hover:bg-cream-100 hover:border-charcoal-400 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-medium transition-all duration-300 text-center"
                 >
                   Olfactory Families
                 </Link>
