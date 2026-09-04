@@ -20,65 +20,69 @@ export const Home: React.FC = () => {
     <div className="space-y-12 sm:space-y-20 md:space-y-28 pb-12">
       
       {/* HERO SECTION */}
-      <section className="relative min-h-[75vh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden bg-cream-200">
-        {/* Soft Background Image Overlay */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[75vh] sm:min-h-[82vh] flex items-center justify-center overflow-hidden bg-cream-200 py-16 sm:py-24 md:py-28">
+        {/* Soft Background Image Overlay - Extremely Subtle & Calm */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=2000"
             alt="Attar Perfume Oil Bottle Aesthetic"
-            className="w-full h-full object-cover object-center opacity-15 filter grayscale hover:scale-105 transition-transform duration-1000"
+            className="w-full h-full object-cover object-center opacity-[0.08] filter grayscale blur-[1px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-cream-100 via-cream-100/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-cream-200/90 via-cream-200/60 to-cream-200"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-8 py-12 sm:py-20">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-9">
           
+          {/* Refined Pill Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-cream-50/80 backdrop-blur-md border border-gold-600/30 text-[10px] sm:text-xs text-charcoal-800 uppercase tracking-[0.18em] sm:tracking-[0.25em] font-medium"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-cream-50/70 backdrop-blur-md border border-gold-600/20 text-[9px] sm:text-[10px] text-gold-700 uppercase tracking-[0.25em] font-medium"
           >
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gold-600" />
+            <Sparkles className="w-3 h-3 text-gold-600 stroke-[1.5]" />
             <span>Artisan Botanical Perfume Oils</span>
           </motion.div>
 
+          {/* Main Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
-            className="font-serif text-3xl sm:text-6xl md:text-7xl font-light text-charcoal-900 tracking-tight leading-[1.15] sm:leading-[1.1]"
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-charcoal-900 tracking-tight leading-[1.12] sm:leading-[1.08]"
           >
             The Essence of <br />
             <span className="italic font-normal text-gold-700 font-serif">Quiet Luxury</span>
           </motion.h1>
 
+          {/* Supporting Text */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
-            className="max-w-2xl mx-auto text-xs sm:text-base text-charcoal-600 font-light leading-relaxed tracking-wide px-2"
+            transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-xl mx-auto text-xs sm:text-sm text-charcoal-500 font-light leading-relaxed tracking-wide"
           >
             Pure, non-alcoholic attars hand-distilled in small copper stills. Rare aged Assam oud, fresh Taif rose petals, and golden amber crafted for skin intimacy.
           </motion.p>
 
+          {/* Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.6, ease: 'easeOut' }}
-            className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+            transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5"
           >
             <Link
               to="/shop"
-              className="w-full sm:w-auto bg-charcoal-900 hover:bg-gold-700 text-cream-50 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] font-medium transition-all duration-300 shadow-md hover:shadow-xl flex items-center justify-center space-x-2.5 group"
+              className="w-full sm:w-auto bg-charcoal-900 hover:bg-gold-700 text-cream-50 px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center space-x-2.5 group"
             >
               <span>Explore Collection</span>
-              <ArrowRight className="w-4 h-4 text-gold-500 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 text-gold-500 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <Link
               to="/categories"
-              className="w-full sm:w-auto border border-charcoal-800 text-charcoal-900 hover:bg-beige-200 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] font-medium transition-colors text-center"
+              className="w-full sm:w-auto border border-beige-300 text-charcoal-800 hover:bg-cream-100 hover:border-charcoal-400 px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 text-center"
             >
               Olfactory Families
             </Link>
