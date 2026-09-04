@@ -20,75 +20,135 @@ export const Home: React.FC = () => {
   return (
     <div className="space-y-12 sm:space-y-20 md:space-y-28 pb-12">
       
-      {/* HERO SECTION */}
-      <section className="relative min-h-[75vh] sm:min-h-[82vh] flex items-center justify-center overflow-hidden bg-cream-200 py-16 sm:py-24 md:py-28">
-        {/* Soft Background Image Overlay - Extremely Subtle & Calm */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=2000"
-            alt="Attar Perfume Oil Bottle Aesthetic"
-            className="w-full h-full object-cover object-center opacity-[0.08] filter grayscale blur-[1px]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-cream-200/90 via-cream-200/60 to-cream-200"></div>
-        </div>
+      {/* HERO SECTION - Split 2-Column Quiet Luxury Redesign */}
+      <section className="relative overflow-hidden bg-[#FBF9F5] border-b border-beige-200/80 py-10 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            
+            {/* LEFT SIDE: Premium Text Content */}
+            <div className="space-y-5 sm:space-y-7 flex flex-col justify-center text-left max-w-xl lg:max-w-none mx-auto lg:mx-0">
+              
+              {/* Refined Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-50 border border-gold-600/30 text-[9px] sm:text-[10px] text-gold-700 uppercase tracking-[0.25em] font-semibold w-max shadow-sm"
+              >
+                <Sparkles className="w-3 h-3 text-gold-600 stroke-[1.5]" />
+                <span>ARTISAN BOTANICAL PERFUME OILS</span>
+              </motion.div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-9">
-          
-          {/* Refined Pill Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-cream-50/70 backdrop-blur-md border border-gold-600/20 text-[9px] sm:text-[10px] text-gold-700 uppercase tracking-[0.25em] font-medium"
-          >
-            <Sparkles className="w-3 h-3 text-gold-600 stroke-[1.5]" />
-            <span>Artisan Botanical Perfume Oils</span>
-          </motion.div>
+              {/* Large Premium Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="font-serif text-3xl sm:text-5xl lg:text-6xl text-charcoal-900 font-light tracking-tight leading-[1.12]"
+              >
+                The Essence of <br />
+                <span className="italic font-normal text-gold-700 font-serif">Quiet Luxury</span>
+              </motion.h1>
 
-          {/* Main Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-charcoal-900 tracking-tight leading-[1.12] sm:leading-[1.08]"
-          >
-            The Essence of <br />
-            <span className="italic font-normal text-gold-700 font-serif">Quiet Luxury</span>
-          </motion.h1>
+              {/* Supporting Text */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="text-xs sm:text-sm text-charcoal-600 font-light leading-relaxed tracking-wide max-w-lg"
+              >
+                Pure, alcohol-free concentrated attars hand-distilled in traditional copper stills. Formulated with rare aged Assam agarwood, fresh Taif roses, and Mysore sandalwood designed for intimate skin longevity.
+              </motion.p>
 
-          {/* Supporting Text */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-xl mx-auto text-xs sm:text-sm text-charcoal-500 font-light leading-relaxed tracking-wide"
-          >
-            Pure, non-alcoholic attars hand-distilled in small copper stills. Rare aged Assam oud, fresh Taif rose petals, and golden amber crafted for skin intimacy.
-          </motion.p>
+              {/* Soft Offer Line */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="inline-flex items-center gap-2 bg-cream-100/80 border border-beige-300/80 px-3.5 py-2 rounded-xl text-[10px] sm:text-xs text-charcoal-800 font-medium w-max"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-600 animate-pulse"></span>
+                <span>Complimentary 1ml artisan sample with every order • Free shipping above ₹999</span>
+              </motion.div>
 
-          {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5"
-          >
-            <Link
-              to="/shop"
-              className="w-full sm:w-auto bg-charcoal-900 hover:bg-gold-700 text-cream-50 px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center space-x-2.5 group"
+              {/* Two CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
+              >
+                <Link
+                  to="/shop"
+                  className="bg-charcoal-900 hover:bg-gold-700 text-cream-50 px-7 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2.5 group text-center"
+                >
+                  <span>Explore Collection</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-gold-500 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <Link
+                  to="/categories"
+                  className="border border-beige-300 text-charcoal-800 hover:bg-cream-100 hover:border-charcoal-400 px-7 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 text-center"
+                >
+                  Olfactory Families
+                </Link>
+              </motion.div>
+
+            </div>
+
+            {/* RIGHT SIDE: Elegant Stacked Product Image Composition */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="relative max-w-md lg:max-w-none mx-auto w-full"
             >
-              <span>Explore Collection</span>
-              <ArrowRight className="w-3.5 h-3.5 text-gold-500 group-hover:translate-x-1 transition-transform" />
-            </Link>
+              {/* Main Featured Attar Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-beige-300/80 bg-cream-100 group">
+                <img
+                  src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200"
+                  alt="Shahbazi Artisan Perfume Oil Bottle"
+                  className="w-full h-[340px] sm:h-[440px] lg:h-[490px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/40 via-transparent to-transparent"></div>
 
-            <Link
-              to="/categories"
-              className="w-full sm:w-auto border border-beige-300 text-charcoal-800 hover:bg-cream-100 hover:border-charcoal-400 px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 text-center"
-            >
-              Olfactory Families
-            </Link>
-          </motion.div>
+                {/* Bottom Overlay Label */}
+                <div className="absolute bottom-4 left-4 right-4 text-cream-50 flex justify-between items-end backdrop-blur-sm bg-charcoal-950/40 p-3.5 rounded-2xl border border-white/10">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gold-400 font-medium">Featured Release</p>
+                    <h4 className="font-serif text-base sm:text-lg font-normal">Royal Oud Sublime</h4>
+                  </div>
+                  <span className="text-xs font-serif italic text-cream-100">Assam Agarwood</span>
+                </div>
+              </div>
 
+              {/* Floating Secondary Image Badge (Bottom Left) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute -bottom-5 -left-3 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md border border-beige-300 rounded-2xl p-2.5 sm:p-3 shadow-xl flex items-center gap-3 max-w-[210px] sm:max-w-[240px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=300"
+                  alt="Attar Dropper Detail"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover border border-beige-200 flex-shrink-0"
+                />
+                <div className="min-w-0">
+                  <p className="text-[10px] uppercase tracking-wider text-gold-700 font-semibold">100% Pure Extract</p>
+                  <p className="text-[11px] font-medium text-charcoal-900 truncate">Zero Alcohol Formula</p>
+                  <p className="text-[9px] text-charcoal-500 font-light truncate">Blooms with body warmth</p>
+                </div>
+              </motion.div>
+
+              {/* Floating Top Right Tag */}
+              <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 bg-charcoal-900 text-cream-50 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium px-3.5 py-1.5 rounded-full shadow-lg border border-gold-600/40">
+                2026 Vintage Harvest
+              </div>
+
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
