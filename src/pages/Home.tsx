@@ -5,14 +5,57 @@ import { PRODUCTS, CATEGORIES } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 import { ProductCardSkeleton } from '../components/SkeletonLoader';
 import { TestimonialSection } from '../components/TestimonialSection';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const ATTAR_SLIDES = [
+  {
+    id: 1,
+    title: 'Royal Oud Sublime',
+    note: 'Assam Agarwood',
+    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=1000',
+    thumb: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=300',
+    badge: '2026 Aged Reserve'
+  },
+  {
+    id: 2,
+    title: 'Sandal Amber Radiance',
+    note: 'Mysore Sandalwood',
+    image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=1000',
+    thumb: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=300',
+    badge: 'Copper Still Hydro'
+  },
+  {
+    id: 3,
+    title: 'Taif Rose Absolute',
+    note: 'Damask Petal Harvest',
+    image: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1000',
+    thumb: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=300',
+    badge: 'Dawn Harvest'
+  },
+  {
+    id: 4,
+    title: 'Musk Kashmir Supreme',
+    note: 'Botanical White Musk',
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1000',
+    thumb: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=300',
+    badge: 'Pure Oil Extract'
+  }
+];
 
 export const Home: React.FC = () => {
   const [loading, setLoading] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % ATTAR_SLIDES.length);
+    }, 2500);
+    return () => clearInterval(slideTimer);
   }, []);
 
   const featuredProducts = PRODUCTS.filter((p) => p.isFeatured).slice(0, 4);
@@ -96,29 +139,62 @@ export const Home: React.FC = () => {
 
             </div>
 
-            {/* RIGHT SIDE: Elegant Stacked Product Image Composition */}
+            {/* RIGHT SIDE: 2.5s Auto-Cycling Traditional Attar Image Composition */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
               className="relative max-w-md lg:max-w-none mx-auto w-full"
             >
-              {/* Main Featured Attar Image */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-beige-300/80 bg-cream-100 group">
-                <img
-                  src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200"
-                  alt="Shahbazi Artisan Perfume Oil Bottle"
-                  className="w-full h-[340px] sm:h-[440px] lg:h-[490px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/40 via-transparent to-transparent"></div>
+              {/* Main Featured Attar Image Container */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-beige-300/80 bg-cream-100 group h-[350px] sm:h-[450px] lg:h-[500px]">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={ATTAR_SLIDES[currentSlide].id}
+                    src={ATTAR_SLIDES[currentSlide].image}
+                    alt={ATTAR_SLIDES[currentSlide].title}
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.96 }}
+                    transition={{ duration: 0.6, ease: 'easeInOut' }}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </AnimatePresence>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-charcoal-950/10 to-transparent pointer-events-none"></div>
+
+                {/* Top Right Vintage Badge */}
+                <div className="absolute top-4 right-4 bg-charcoal-900/90 backdrop-blur-md text-cream-50 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium px-3.5 py-1.5 rounded-full shadow-lg border border-gold-600/40">
+                  {ATTAR_SLIDES[currentSlide].badge}
+                </div>
+
+                {/* Slide Indicators */}
+                <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                  {ATTAR_SLIDES.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        idx === currentSlide ? 'w-5 bg-gold-400' : 'w-1.5 bg-white/40'
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
 
                 {/* Bottom Overlay Label */}
-                <div className="absolute bottom-4 left-4 right-4 text-cream-50 flex justify-between items-end backdrop-blur-sm bg-charcoal-950/40 p-3.5 rounded-2xl border border-white/10">
+                <div className="absolute bottom-4 left-4 right-4 text-cream-50 flex justify-between items-end backdrop-blur-md bg-charcoal-950/50 p-3.5 sm:p-4 rounded-2xl border border-white/10">
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-gold-400 font-medium">Featured Release</p>
-                    <h4 className="font-serif text-base sm:text-lg font-normal">Royal Oud Sublime</h4>
+                    <p className="text-[10px] uppercase tracking-widest text-gold-400 font-medium">
+                      Artisan Attar • {currentSlide + 1} of {ATTAR_SLIDES.length}
+                    </p>
+                    <h4 className="font-serif text-base sm:text-xl font-normal text-white">
+                      {ATTAR_SLIDES[currentSlide].title}
+                    </h4>
                   </div>
-                  <span className="text-xs font-serif italic text-cream-100">Assam Agarwood</span>
+                  <span className="text-xs font-serif italic text-cream-200">
+                    {ATTAR_SLIDES[currentSlide].note}
+                  </span>
                 </div>
               </div>
 
@@ -130,21 +206,16 @@ export const Home: React.FC = () => {
                 className="absolute -bottom-5 -left-3 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md border border-beige-300 rounded-2xl p-2.5 sm:p-3 shadow-xl flex items-center gap-3 max-w-[210px] sm:max-w-[240px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=300"
-                  alt="Attar Dropper Detail"
+                  src={ATTAR_SLIDES[currentSlide].thumb}
+                  alt="Attar Extract Detail"
                   className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover border border-beige-200 flex-shrink-0"
                 />
                 <div className="min-w-0">
-                  <p className="text-[10px] uppercase tracking-wider text-gold-700 font-semibold">100% Pure Extract</p>
+                  <p className="text-[10px] uppercase tracking-wider text-gold-700 font-semibold">100% Pure Oil Extract</p>
                   <p className="text-[11px] font-medium text-charcoal-900 truncate">Zero Alcohol Formula</p>
                   <p className="text-[9px] text-charcoal-500 font-light truncate">Blooms with body warmth</p>
                 </div>
               </motion.div>
-
-              {/* Floating Top Right Tag */}
-              <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 bg-charcoal-900 text-cream-50 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium px-3.5 py-1.5 rounded-full shadow-lg border border-gold-600/40">
-                2026 Vintage Harvest
-              </div>
 
             </motion.div>
 
