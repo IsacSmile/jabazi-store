@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ShoppingBag, Search, Menu, X, Heart, Sparkles } from 'lucide-react';
+import { ShoppingBag, Search, Menu, X, Heart, Sparkles, MapPin } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -269,6 +269,16 @@ export const Navbar: React.FC = () => {
                     100% Concentrated Attar Oils • Free Shipping Above ₹999
                   </p>
                 </div>
+
+                {/* Boutique Store Location */}
+                <div className="flex items-start gap-2 bg-cream-100/90 border border-beige-300/60 p-3 rounded-xl text-charcoal-800">
+                  <MapPin className="w-4 h-4 text-gold-700 flex-shrink-0 mt-0.5" />
+                  <div className="text-[10px] space-y-0.5">
+                    <p className="font-medium text-charcoal-900">Boutique Store</p>
+                    <p className="text-charcoal-600 font-light">Venus More, Near Jama Masjid, Siliguri</p>
+                  </div>
+                </div>
+
                 <p className="text-[10px] text-charcoal-500 font-light text-center pt-1">
                   Engineered by{' '}
                   <a
