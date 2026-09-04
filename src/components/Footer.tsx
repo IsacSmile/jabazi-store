@@ -24,11 +24,11 @@ export const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 text-gold-500">
               <Feather className="w-5 h-5 stroke-1" />
               <span className="font-serif text-2xl tracking-[0.2em] uppercase font-light text-cream-50">
-                JABAZI STORE
+                SHAHBAZI STORE
               </span>
             </div>
             <p className="text-xs text-charcoal-300 font-light leading-relaxed max-w-md">
-              Jabazi Store is an independent artisan perfume house dedicated to the preservation of traditional attar distillation. Pure, zero-alcohol concentrated oils extracted from wild agarwood, Taif roses, and sacred botanicals.
+              Shahbazi Store is an independent artisan perfume house dedicated to the preservation of traditional attar distillation. Pure, zero-alcohol concentrated oils extracted from wild agarwood, Taif roses, and sacred botanicals.
             </p>
             <div className="text-[11px] text-gold-500/80 font-light uppercase tracking-widest pt-2">
               Alcohol-Free • 100% Pure Oil Extract • Ethical Sourcing
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
           {/* Newsletter Signup */}
           <div className="md:col-span-4 space-y-4">
             <h4 className="text-xs uppercase tracking-widest font-medium text-gold-500">
-              The Jabazi Gazette
+              The Shahbazi Gazette
             </h4>
             <p className="text-xs text-charcoal-300 font-light leading-relaxed">
               Subscribe to receive private invitations to rare vintage batch drops, olfactory notes, and private collection access.
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-charcoal-400 font-light gap-4">
-          <p>© {new Date().getFullYear()} Jabazi Store. All rights reserved. Quiet luxury attars.</p>
+          <p>© {new Date().getFullYear()} Shahbazi Store. All rights reserved. Quiet luxury attars.</p>
           <div className="flex space-x-6 text-[11px]">
             <span className="hover:text-cream-50 cursor-pointer">Privacy Protocol</span>
             <span className="hover:text-cream-50 cursor-pointer">Terms of Service</span>

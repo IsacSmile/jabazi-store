@@ -20,7 +20,7 @@ export const OrderHistory: React.FC = () => {
       notes: { top: [], heart: [], base: [] },
       intensity: 'Moderate' as const,
       longevity: '12 hours',
-      origin: 'Jabazi Vault',
+      origin: 'Shahbazi Vault',
       images: [item.image],
       sizes: [{ name: item.size, price: item.price }]
     };

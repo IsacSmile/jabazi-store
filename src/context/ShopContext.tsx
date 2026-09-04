@@ -67,9 +67,9 @@ interface ShopContextType {
 
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
-const LOCAL_STORAGE_CART_KEY = 'jabazi_cart_v1';
-const LOCAL_STORAGE_WISHLIST_KEY = 'jabazi_wishlist_v1';
-const LOCAL_STORAGE_ORDERS_KEY = 'jabazi_orders_v1';
+const LOCAL_STORAGE_CART_KEY = 'shahbazi_cart_v1';
+const LOCAL_STORAGE_WISHLIST_KEY = 'shahbazi_wishlist_v1';
+const LOCAL_STORAGE_ORDERS_KEY = 'shahbazi_orders_v1';
 
 export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);

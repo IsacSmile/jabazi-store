@@ -28,7 +28,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     badge: 'VERIFIED ~',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400',
-    quote: '"Jabazi\'s Royal Oud Sublime is remarkably smooth with zero synthetic alcohol sting. It lasts over 16 hours on my skin and matures into a heavenly, resinous amber aura."',
+    quote: '"Shahbazi\'s Royal Oud Sublime is remarkably smooth with zero synthetic alcohol sting. It lasts over 16 hours on my skin and matures into a heavenly, resinous amber aura."',
     permitBadge: 'Verified Purchase',
     pillBadge: 'Fatima'
   },
@@ -42,7 +42,7 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     badge: 'VERIFIED ~',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
-    quote: '"As someone who has collected traditional attars for two decades, Jabazi\'s copper-distilled Mysorean Sandalwood is absolute perfection. Deep, rich, and truly quiet luxury."',
+    quote: '"As someone who has collected traditional attars for two decades, Shahbazi\'s copper-distilled Mysorean Sandalwood is absolute perfection. Deep, rich, and truly quiet luxury."',
     permitBadge: 'Master Connoisseur',
     pillBadge: 'Tariq'
   },

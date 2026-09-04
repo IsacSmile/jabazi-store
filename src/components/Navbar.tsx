@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
           {/* Store Logo */}
           <Link to="/" className="text-center group">
             <h1 className="font-serif text-lg sm:text-2xl md:text-3xl tracking-[0.15em] sm:tracking-[0.2em] font-normal text-charcoal-900 uppercase transition-colors group-hover:text-gold-700">
-              JABAZI STORE
+              SHAHBAZI STORE
             </h1>
             <p className="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-charcoal-500 font-light -mt-0.5">
               Pure Perfume Oils
@@ -173,7 +173,7 @@ export const Navbar: React.FC = () => {
               <div>
                 <div className="flex justify-between items-center pb-5 border-b border-beige-200">
                   <span className="font-serif text-lg tracking-widest text-charcoal-900 uppercase">
-                    JABAZI STORE
+                    SHAHBAZI STORE
                   </span>
                   <button onClick={() => setMobileMenuOpen(false)} className="p-1.5 text-charcoal-700">
                     <X className="w-5 h-5" />

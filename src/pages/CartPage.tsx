@@ -18,12 +18,12 @@ export const CartPage: React.FC = () => {
 
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault();
-    if (promoCode.trim().toUpperCase() === 'JABAZI10') {
+    if (promoCode.trim().toUpperCase() === 'SHAHBAZI10') {
       setDiscount(cartTotal * 0.1);
       setPromoApplied(true);
       setPromoError('');
     } else {
-      setPromoError('Invalid code. Use "JABAZI10" for 10% privilege discount.');
+      setPromoError('Invalid code. Use "SHAHBAZI10" for 10% privilege discount.');
     }
   };
 
@@ -179,7 +179,7 @@ export const CartPage: React.FC = () => {
               <div className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="e.g. JABAZI10"
+                  placeholder="e.g. SHAHBAZI10"
                   value={promoCode}
                   onChange={(e) => setPromoCode(e.target.value)}
                   className="bg-white border border-beige-300 rounded-xl px-3 py-2 text-xs text-charcoal-900 focus:outline-none focus:border-gold-600 flex-1 min-w-0"
