@@ -152,61 +152,123 @@ export const Navbar: React.FC = () => {
         </AnimatePresence>
       </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu - Quiet Luxury Redesign */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-charcoal-950/60 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-50 bg-charcoal-950/70 backdrop-blur-md md:hidden"
             onClick={() => setMobileMenuOpen(false)}
           >
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="w-4/5 max-w-xs bg-cream-100 h-full p-6 flex flex-col justify-between"
+              transition={{ type: 'spring', damping: 28, stiffness: 220 }}
+              className="w-5/6 max-w-xs bg-cream-50 h-full p-6 sm:p-8 flex flex-col justify-between border-r border-beige-300 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div>
-                <div className="flex justify-between items-center pb-5 border-b border-beige-200">
-                  <span className="font-serif text-lg tracking-widest text-charcoal-900 uppercase">
-                    SHAHBAZI STORE
-                  </span>
-                  <button onClick={() => setMobileMenuOpen(false)} className="p-1.5 text-charcoal-700">
-                    <X className="w-5 h-5" />
+                {/* Header */}
+                <div className="flex justify-between items-center pb-6 border-b border-beige-200">
+                  <div>
+                    <h2 className="font-serif text-lg tracking-[0.18em] text-charcoal-900 uppercase font-normal">
+                      SHAHBAZI STORE
+                    </h2>
+                    <p className="text-[8px] uppercase tracking-[0.25em] text-gold-700 font-medium">
+                      Quiet Luxury Attars
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 text-charcoal-700 hover:text-gold-700 bg-cream-100 rounded-full transition-colors border border-beige-300/80"
+                    aria-label="Close menu"
+                  >
+                    <X className="w-4 h-4" />
                   </button>
                 </div>
 
-                <nav className="mt-6 flex flex-col space-y-5">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      to={link.path}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-xs uppercase tracking-widest font-medium text-charcoal-800 hover:text-gold-600 transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                {/* Editorial Menu Links */}
+                <nav className="mt-8 flex flex-col space-y-2">
+                  {navLinks.map((link, idx) => {
+                    const isActive = location.pathname === link.path;
+                    return (
+                      <Link
+                        key={link.name}
+                        to={link.path}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`group flex items-center justify-between py-3 px-3.5 rounded-xl transition-all duration-200 ${
+                          isActive
+                            ? 'bg-cream-200/80 text-charcoal-900 border border-gold-600/30'
+                            : 'text-charcoal-700 hover:bg-cream-100 hover:text-charcoal-900'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="text-[10px] font-serif italic text-gold-700">
+                            0{idx + 1}
+                          </span>
+                          <span className="text-xs uppercase tracking-[0.2em] font-medium">
+                            {link.name}
+                          </span>
+                        </div>
+                        <span className="text-gold-600 text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                          →
+                        </span>
+                      </Link>
+                    );
+                  })}
+
+                  {/* Saved Wishlist Link */}
+                  <Link
+                    to="/shop?filter=saved"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="group flex items-center justify-between py-3 px-3.5 rounded-xl text-charcoal-700 hover:bg-cream-100 hover:text-charcoal-900 transition-all duration-200"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-[10px] font-serif italic text-gold-700">05</span>
+                      <span className="text-xs uppercase tracking-[0.2em] font-medium">
+                        Wishlist
+                      </span>
+                    </div>
+                    {wishlist.length > 0 && (
+                      <span className="bg-gold-600 text-charcoal-950 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        {wishlist.length}
+                      </span>
+                    )}
+                  </Link>
+
+                  {/* Shopping Bag Link */}
                   <Link
                     to="/cart"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs uppercase tracking-widest font-medium text-charcoal-800 hover:text-gold-600 flex justify-between items-center"
+                    className="group flex items-center justify-between py-3.5 px-4 rounded-xl bg-charcoal-900 text-cream-50 shadow-md mt-4 transition-all duration-200 hover:bg-gold-700"
                   >
-                    <span>Shopping Cart</span>
-                    <span className="bg-gold-600 text-charcoal-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    <div className="flex items-center gap-2.5">
+                      <ShoppingBag className="w-4 h-4 text-gold-500" />
+                      <span className="text-xs uppercase tracking-[0.2em] font-medium">
+                        Shopping Bag
+                      </span>
+                    </div>
+                    <span className="bg-gold-600 text-charcoal-950 text-[10px] font-bold px-2 py-0.5 rounded-full">
                       {cartCount}
                     </span>
                   </Link>
                 </nav>
               </div>
 
-              <div className="pt-4 border-t border-beige-200 text-[10px] sm:text-xs text-charcoal-500 font-light space-y-1">
-                <p>Pure Artisan Attar Oils</p>
-                <p>Alcohol-Free • 100% Concentrated</p>
+              {/* Bottom Luxury Footer */}
+              <div className="pt-6 border-t border-beige-200 space-y-3">
+                <div className="bg-cream-200/60 border border-beige-300/80 p-3.5 rounded-xl space-y-1">
+                  <div className="flex items-center gap-1.5 text-[9px] uppercase tracking-widest text-gold-700 font-semibold">
+                    <Sparkles className="w-3 h-3 text-gold-600" />
+                    <span>Pure Distillation</span>
+                  </div>
+                  <p className="text-[10px] text-charcoal-600 font-light leading-snug">
+                    100% Concentrated Attar Oils • Free Shipping Above ₹999
+                  </p>
+                </div>
               </div>
             </motion.div>
           </motion.div>

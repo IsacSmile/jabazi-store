@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ATTAR_SLIDES = [
   {
     id: 1,
+    productId: 'royal-oud-sublime',
     title: 'Royal Oud Sublime',
     note: 'Assam Agarwood',
     image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=1000',
@@ -18,6 +19,7 @@ const ATTAR_SLIDES = [
   },
   {
     id: 2,
+    productId: 'sandal-amber-radiance',
     title: 'Sandal Amber Radiance',
     note: 'Mysore Sandalwood',
     image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=1000',
@@ -26,6 +28,7 @@ const ATTAR_SLIDES = [
   },
   {
     id: 3,
+    productId: 'taif-rose-absolute',
     title: 'Taif Rose Absolute',
     note: 'Damask Petal Harvest',
     image: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=1000',
@@ -34,6 +37,7 @@ const ATTAR_SLIDES = [
   },
   {
     id: 4,
+    productId: 'musk-kashmir-supreme',
     title: 'Musk Kashmir Supreme',
     note: 'Botanical White Musk',
     image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1000',
@@ -154,18 +158,20 @@ export const Home: React.FC = () => {
                   initial={{ opacity: 0, x: -20, y: -15 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute top-0 left-0 z-10 w-[52%] sm:w-[50%] h-[200px] sm:h-[260px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-beige-300/90 bg-white group"
+                  className="absolute top-0 left-0 z-10 w-[52%] sm:w-[50%] h-[200px] sm:h-[260px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-beige-300/90 bg-white group cursor-pointer"
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=800"
-                    alt="Mysore Sandalwood Attar"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 text-cream-50">
-                    <span className="text-[8.5px] uppercase tracking-wider text-gold-400 font-semibold block">01 • Hydro-Distilled</span>
-                    <h5 className="font-serif text-xs sm:text-sm font-normal truncate">Mysore Sandalwood</h5>
-                  </div>
+                  <Link to="/product/sandal-amber-radiance" className="block w-full h-full relative">
+                    <img
+                      src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=800"
+                      alt="Mysore Sandalwood Attar"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 text-cream-50">
+                      <span className="text-[8.5px] uppercase tracking-wider text-gold-400 font-semibold block">01 • Hydro-Distilled</span>
+                      <h5 className="font-serif text-xs sm:text-sm font-normal truncate">Mysore Sandalwood</h5>
+                    </div>
+                  </Link>
                 </motion.div>
 
                 {/* 2. MAIN CENTER HERO CARD (Auto-cycling Attar Image) */}
@@ -173,55 +179,61 @@ export const Home: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute z-20 w-[78%] sm:w-[76%] h-[290px] sm:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-2xl border border-gold-600/30 bg-cream-100 group"
+                  className="absolute z-20 w-[78%] sm:w-[76%] h-[290px] sm:h-[380px] lg:h-[420px] rounded-3xl overflow-hidden shadow-2xl border border-gold-600/30 bg-cream-100 group cursor-pointer"
                 >
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={ATTAR_SLIDES[currentSlide].id}
-                      src={ATTAR_SLIDES[currentSlide].image}
-                      alt={ATTAR_SLIDES[currentSlide].title}
-                      initial={{ opacity: 0, scale: 1.04 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.96 }}
-                      transition={{ duration: 0.6, ease: 'easeInOut' }}
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </AnimatePresence>
+                  <Link to={`/product/${ATTAR_SLIDES[currentSlide].productId}`} className="block w-full h-full relative">
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={ATTAR_SLIDES[currentSlide].id}
+                        src={ATTAR_SLIDES[currentSlide].image}
+                        alt={ATTAR_SLIDES[currentSlide].title}
+                        initial={{ opacity: 0, scale: 1.04 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.96 }}
+                        transition={{ duration: 0.6, ease: 'easeInOut' }}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </AnimatePresence>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-charcoal-950/15 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-charcoal-950/15 to-transparent pointer-events-none"></div>
 
-                  {/* Top Right Vintage Badge */}
-                  <div className="absolute top-3.5 right-3.5 bg-charcoal-900/90 backdrop-blur-md text-cream-50 text-[8.5px] sm:text-[9.5px] uppercase tracking-[0.2em] font-medium px-3 py-1 rounded-full shadow-lg border border-gold-600/40">
-                    {ATTAR_SLIDES[currentSlide].badge}
-                  </div>
+                    {/* Top Right Vintage Badge */}
+                    <div className="absolute top-3.5 right-3.5 bg-charcoal-900/90 backdrop-blur-md text-cream-50 text-[8.5px] sm:text-[9.5px] uppercase tracking-[0.2em] font-medium px-3 py-1 rounded-full shadow-lg border border-gold-600/40">
+                      {ATTAR_SLIDES[currentSlide].badge}
+                    </div>
 
-                  {/* Slide Indicators */}
-                  <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                    {/* Bottom Overlay Label */}
+                    <div className="absolute bottom-3.5 left-3.5 right-3.5 text-cream-50 flex justify-between items-end backdrop-blur-md bg-charcoal-950/50 p-3 sm:p-3.5 rounded-2xl border border-white/10">
+                      <div>
+                        <p className="text-[9px] uppercase tracking-widest text-gold-400 font-medium">
+                          Artisan Attar • {currentSlide + 1}/{ATTAR_SLIDES.length}
+                        </p>
+                        <h4 className="font-serif text-sm sm:text-lg font-normal text-white">
+                          {ATTAR_SLIDES[currentSlide].title}
+                        </h4>
+                      </div>
+                      <span className="text-[11px] font-serif italic text-cream-200">
+                        {ATTAR_SLIDES[currentSlide].note}
+                      </span>
+                    </div>
+                  </Link>
+
+                  {/* Slide Indicators (stop propagation so clicking dots doesn't trigger navigate) */}
+                  <div className="absolute top-3.5 left-3.5 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
                     {ATTAR_SLIDES.map((_, idx) => (
                       <button
                         key={idx}
-                        onClick={() => setCurrentSlide(idx)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setCurrentSlide(idx);
+                        }}
                         className={`h-1.5 rounded-full transition-all duration-300 ${
                           idx === currentSlide ? 'w-4 bg-gold-400' : 'w-1.5 bg-white/40'
                         }`}
                         aria-label={`Go to slide ${idx + 1}`}
                       />
                     ))}
-                  </div>
-
-                  {/* Bottom Overlay Label */}
-                  <div className="absolute bottom-3.5 left-3.5 right-3.5 text-cream-50 flex justify-between items-end backdrop-blur-md bg-charcoal-950/50 p-3 sm:p-3.5 rounded-2xl border border-white/10">
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-gold-400 font-medium">
-                        Artisan Attar • {currentSlide + 1}/{ATTAR_SLIDES.length}
-                      </p>
-                      <h4 className="font-serif text-sm sm:text-lg font-normal text-white">
-                        {ATTAR_SLIDES[currentSlide].title}
-                      </h4>
-                    </div>
-                    <span className="text-[11px] font-serif italic text-cream-200">
-                      {ATTAR_SLIDES[currentSlide].note}
-                    </span>
                   </div>
                 </motion.div>
 
@@ -230,24 +242,26 @@ export const Home: React.FC = () => {
                   initial={{ opacity: 0, x: 20, y: 20 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute bottom-0 right-0 z-30 w-[55%] sm:w-[52%] h-[180px] sm:h-[230px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-beige-300 bg-white group"
+                  className="absolute bottom-0 right-0 z-30 w-[55%] sm:w-[52%] h-[180px] sm:h-[230px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-beige-300 bg-white group cursor-pointer"
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=800"
-                    alt="Taif Rose Botanical Attar"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent"></div>
-                  
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 text-cream-50 flex items-center justify-between">
-                    <div>
-                      <span className="text-[8.5px] uppercase tracking-wider text-gold-400 font-semibold block">03 • Pure Extract</span>
-                      <h5 className="font-serif text-xs sm:text-sm font-normal truncate">Taif Rose Absolute</h5>
+                  <Link to="/product/taif-rose-absolute" className="block w-full h-full relative">
+                    <img
+                      src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=800"
+                      alt="Taif Rose Botanical Attar"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent"></div>
+                    
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 text-cream-50 flex items-center justify-between">
+                      <div>
+                        <span className="text-[8.5px] uppercase tracking-wider text-gold-400 font-semibold block">03 • Pure Extract</span>
+                        <h5 className="font-serif text-xs sm:text-sm font-normal truncate">Taif Rose Absolute</h5>
+                      </div>
+                      <span className="text-[9px] bg-gold-600/90 text-charcoal-950 font-semibold px-2 py-0.5 rounded-md uppercase tracking-wider">
+                        100% Oil
+                      </span>
                     </div>
-                    <span className="text-[9px] bg-gold-600/90 text-charcoal-950 font-semibold px-2 py-0.5 rounded-md uppercase tracking-wider">
-                      100% Oil
-                    </span>
-                  </div>
+                  </Link>
                 </motion.div>
 
               </div>
